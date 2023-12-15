@@ -1,0 +1,36 @@
+name: 'PR reviewer remind notification action'
+description: 'Automatically send Slack notification for left PRs to reviewers'
+branding:
+  icon: 'bell'
+  color: 'green'
+inputs:
+  github-developer-id-mapping:
+    description: 'String that we need for mapping from Github ID to Slack ID. Ex)"KanghyunJeon:UUABCDEFG,member:UuHIJKLMN" '
+    required: true
+    default: ''
+  slack-channel-id:
+    description: 'Slack channel ID'
+    required: true
+    default: ''
+  slack-message-lang:
+    description: 'Optional for preferred language'
+    required: false
+    default: 'us'
+
+  slack-webhook-url:
+    description: 'Choice 1 : Slack webhook url.'
+    required: true
+    default: ''
+  slack-webhook-username:
+    description: 'Optional for Choice 1 : change Slack webhook's username.'
+    required: false
+    default: ''
+
+  slack-bot-token:
+    description: 'Choice 2 : Slack bot token.'
+    required: true
+    default: ''
+
+runs:
+  using: 'node20'
+  main: 'dist/index.js'
