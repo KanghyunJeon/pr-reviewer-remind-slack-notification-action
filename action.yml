@@ -1,8 +1,11 @@
 name: 'PR reviewer remind notification action'
 description: 'Automatically send Slack notification for left PRs to reviewers'
+author: '@KanghyunJeon'
+
 branding:
   icon: 'bell'
   color: 'green'
+
 inputs:
   github-developer-id-mapping:
     description: 'String that we need for mapping from Github ID to Slack ID. Ex)"KanghyunJeon:UUABCDEFG,member:UuHIJKLMN" '
