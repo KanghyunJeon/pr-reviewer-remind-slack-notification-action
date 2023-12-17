@@ -7,10 +7,10 @@ module.exports = {
 
 /*
     set language
-    default = 'us' 
+    default = 'en' 
     option = 'ko' , 
 */
-var langCode = 'us';
+var langCode = 'en';
 function setLangCode(lang) {
     langCode = lang
 }

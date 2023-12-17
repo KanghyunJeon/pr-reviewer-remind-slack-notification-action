@@ -1,5 +1,5 @@
 {
-  "name": "pr-reviewer-remind-notification-action",
+  "name": "pr-reviewer-remind-slack-notification-action",
   "version": "1.0.0",
   "description": "Automatically send Slack notification for left PRs to reviewers",
   "main": "index.js",

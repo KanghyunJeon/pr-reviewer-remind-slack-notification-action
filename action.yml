@@ -1,4 +1,4 @@
-name: 'PR reviewer remind notification action'
+name: 'PR reviewer remind slack notification action'
 description: 'Automatically send Slack notification for left PRs to reviewers'
 author: 'KanghyunJeon'
 
@@ -16,7 +16,7 @@ inputs:
   slack-message-lang:
     description: 'Optional for preferred language'
     required: false
-    default: 'us'
+    default: 'en'
 
   slack-webhook-url:
     description: 'Choice 1 : Slack webhook url.'
