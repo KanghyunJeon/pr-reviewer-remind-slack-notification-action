@@ -1,6 +1,6 @@
-name: 'PR reviewer remind notification action'
-description: 'Automatically send Slack notification for left PRs to reviewers'
-author: 'KanghyunJeon'
+name: "PR reviewer remind slack notification action"
+description: "Automatically send Slack notification for left PRs to reviewers"
+author: "KanghyunJeon"
 
 branding:
   icon: 'bell'
@@ -8,25 +8,25 @@ branding:
 
 inputs:
   github-developer-id-mapping:
-    description: 'String that we need for mapping from Github ID to Slack ID. Ex)"KanghyunJeon:UUABCDEFG,member:UuHIJKLMN" '
+    description: "String that we need for mapping from Github ID to Slack ID. Ex) KanghyunJeon:UUABCDEFG,member:UuHIJKLMN "
     required: true
   slack-channel-id:
-    description: 'Slack channel ID'
+    description: "Slack channel ID"
     required: true
   slack-message-lang:
-    description: 'Optional for preferred language'
+    description: "Optional for preferred language"
     required: false
-    default: 'us'
+    default: 'en'
 
   slack-webhook-url:
-    description: 'Choice 1 : Slack webhook url.'
+    description: "Choice 1 : Slack webhook url."
     required: true
   slack-webhook-username:
-    description: 'Optional for Choice 1 : change Slack webhook's username.'
+    description: "Optional for Choice 1 : change Slack webhook's username."
     required: false
 
   slack-bot-token:
-    description: 'Choice 2 : Slack bot token.'
+    description: "Choice 2 : Slack bot token."
     required: true
 
 runs:

@@ -1,4 +1,4 @@
-# pr-reviewer-remind-notification-action
+# pr-reviewer-remind-slack-notification-action
 Automatically send Slack notification for left PRs to reviewers.
 
 <br/>
@@ -21,8 +21,8 @@ Ex) 'C01234ABCDE'
 **`slack-message-lang`** <br/>
 Optional for preferred language <br/>
 **Required: false** <br/>
-**Default: 'us'** <br/>
-Ex) 'ko'
+**Default: 'en'** <br/>
+'en' and 'ko' are supported for now.
 
 **`slack-webhook-url`** <br/>
 Choice 1 : Slack webhook url <br/>
@@ -68,7 +68,7 @@ jobs:
       with:
         github-developer-id-mapping: ${{ vars.SLACK_DEVELOPER_ID }} # Required, need to set github repository vaiables ex) KanghyunJeon:UUABCDEFG,member:UuHIJKLMN'
         slack-channel-id: 'C01234ABCDE' # Required
-        slack-message-lang: 'us' # Optional, ex) ko
+        slack-message-lang: 'en' # Optional, ex) ko
 
         slack-webhook-url: 'https://hooks.slack.com/services/XXXXXXXXX/YYYYYYYYYY/ZZZZZZZZZZZZZZZZZ' # Required but Choice 1
         slack-webhook-username: 'PR Bot' # Optional for Choice 1
