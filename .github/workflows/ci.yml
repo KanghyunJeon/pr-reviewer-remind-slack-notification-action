@@ -15,4 +15,5 @@ jobs:
       with:
         node-version: '20'
         cache: 'npm'
+    - run: npm i -D jest
     - run: npm run test
