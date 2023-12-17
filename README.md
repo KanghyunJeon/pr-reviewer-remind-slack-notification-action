@@ -10,7 +10,7 @@ Automatically send Slack notification for left PRs to reviewers.
 String that we need for mapping from Github ID to Slack ID <br/>
 **Required: true** <br/>
 **Default: ''** <br/>
-Ex) 'KanghyunJeon:UUABCDEFG,member:UuHIJKLMN' 
+Ex) 'KanghyunJeon:UUABCDEFG,member:UuHIJKLMN' or recommended way like ${{ vars.SLACK_DEVELOPER_ID }}
 
 **`slack-channel-id`** <br/>
 Slack channel ID <br/>
@@ -47,6 +47,10 @@ Ex) 'xoxb-1010101000007-0000000044444-ABCDEASDADADAD'
 <br/>
 
 ## How to use?
+**Recommended Way for github-developer-id-mapping**
+![Screenshot](recommended_way.JPG)
+<br/>
+
 ```yaml
 name: PR Reviewer Remind Slack Notification
 
