@@ -25,6 +25,7 @@ const PULLS_ENDPOINT = `${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls`;
 async function main() {
     
     try {
+        core.info(`Start main()`);
         const githubDeveloperIdMappingString = core.getInput('github-developer-id-mapping'); //Required
         const slackChannelId = core.getInput('slack-channel-id'); //Required
         const slackMessageLang = core.getInput('slack-message-lang'); //Optional Language
@@ -68,6 +69,7 @@ async function main() {
         }
       
     } catch (error) {
+        core.info(`Error on main()`);
         core.setFailed(error.message);
     }
 
