@@ -7,7 +7,6 @@
 name: 'Pull request reviewer reminder'
 on:
   push:
-    # branches to consider in the event; optional, defaults to all
     branches:
       - main
 
@@ -19,7 +18,7 @@ jobs:
   pull-request-reviewer-reminder:
     runs-on: ubuntu-latest
     steps:
-      - uses: KanghyunJeon/pr-reviewer-remind-slack-notification-action@v0.1.0
+      - uses: KanghyunJeon/pr-reviewer-remind-slack-notification-action@v0.1.1
         env:
           GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
         with:
