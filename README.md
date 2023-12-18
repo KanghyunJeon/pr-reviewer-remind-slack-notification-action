@@ -26,6 +26,7 @@ Optional for preferred language <br/>
 
 **`slack-webhook-url`** <br/>
 Choice 1 : Slack webhook url <br/>
+  -> you can use a webhook url to send notifications. <br/>
 **Required: true** <br/>
 **Default: ''** <br/>
 Ex) 'https://hooks.slack.com/services/XXXXXXXXX/YYYYYYYYYY/ZZZZZZZZZZZZZZZZZ'
@@ -38,6 +39,7 @@ Ex) 'PR Bot'
 
 **`slack-bot-token`** <br/>
 Choice 2 : Slack bot token <br/>
+  -> you can use a Slack bot to send notifications. <br/>
 **Required: true** <br/>
 **Default: ''** <br/>
 Ex) 'xoxb-1010101000007-0000000044444-ABCDEASDADADAD'
