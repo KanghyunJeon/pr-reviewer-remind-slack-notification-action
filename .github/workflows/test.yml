@@ -4,11 +4,11 @@
 ######TEST
 ######TEST
 ######TEST
-name: 'Pull request reviewer reminder'
+# name: 'Pull request reviewer reminder'
 on:
   push:
     branches:
-      - main
+      - testtest
 
 permissions:
   contents: write

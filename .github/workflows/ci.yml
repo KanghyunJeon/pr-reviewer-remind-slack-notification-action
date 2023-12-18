@@ -15,5 +15,10 @@ jobs:
       with:
         node-version: '20'
         cache: 'npm'
+    - run: npm i -g @vercel/ncc
+    - run: ncc build
     - run: npm i -D jest
     - run: npm run test
+
+
+    
