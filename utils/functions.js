@@ -78,10 +78,10 @@ function getPRArrayOfReviewers(pullRequests) {
  * @return {Array} Array of Simple Objects with { url, title, login, assignee } properties
  */
 function createPrReviewerArray(pullRequestsReviewersArray) {
-    const pr2user = [];
+    const simplePrArray = [];
     for (const pr of pullRequestsReviewersArray) {
         for (const user of pr.requested_reviewers) {
-        pr2user.push({
+        simplePrArray.push({
             url: pr.html_url,
             title: pr.title,
             login: user.login,
@@ -89,7 +89,7 @@ function createPrReviewerArray(pullRequestsReviewersArray) {
         });
         }
         for (const team of pr.requested_teams) {
-        pr2user.push({
+        simplePrArray.push({
             url: pr.html_url,
             title: pr.title,
             login: team.slug,
@@ -97,7 +97,7 @@ function createPrReviewerArray(pullRequestsReviewersArray) {
         });
         }
     }
-    return pr2user;
+    return simplePrArray;
 }
 
 /**

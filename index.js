@@ -25,7 +25,7 @@ const PULLS_ENDPOINT = `${GITHUB_API_URL}/repos/${GITHUB_REPOSITORY}/pulls`;
 async function main() {
     
     try {
-        core.info(`Start main()`);
+        core.info(`main() / get infos`);
         const githubDeveloperIdMappingString = core.getInput('github-developer-id-mapping'); //Required
         const slackChannelId = core.getInput('slack-channel-id'); //Required
         const slackMessageLang = core.getInput('slack-message-lang'); //Optional Language
@@ -40,6 +40,7 @@ async function main() {
       
       
         if (pullRequestsReviewersArray) {
+            core.info(`main() / PR exist.`);
             stringLocaleUtil.setLangCode(slackMessageLang); // need to set language for the service
 
             if (githubDeveloperIdMappingString && !checkGithubProviderFormat(githubDeveloperIdMappingString)) {
@@ -55,21 +56,23 @@ async function main() {
             };
 
             if(slackWebhookUrl) {
+                core.info(`main() / using webhook url.`);
                 messageObject.username = slackWebhookUsename;
                 const resNotification = await sendNotification(slackWebhookUrl, messageObject);
                 printSentMessage(resNotification);
             }
             if(slackBotToken) {
+                core.info(`main() / using bot token.`);
                 const resNotification = await sendNotificationWithBot(slackBotToken, messageObject);
                 printSentMessage(resNotification);
             }
             
         } else {
-            core.info(`No PR exist!`);
+            core.info(`main() / No PR exist!`);
         }
       
     } catch (error) {
-        core.info(`Error on main()`);
+        core.info(`main() / Error occured.`);
         core.setFailed(error.message);
     }
 
