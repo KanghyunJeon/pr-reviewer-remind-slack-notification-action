@@ -62,7 +62,7 @@ jobs:
   pr-reviews-reminder:
     runs-on: ubuntu-latest
     steps:
-    - uses: KanghyunJeon/pr-reviews-reminder-action@v1.0.0
+    - uses: KanghyunJeon/pr-reviewer-remind-slack-notification-action@v1.0.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
@@ -75,3 +75,11 @@ jobs:
 
         slack-bot-token: 'xoxb-1010101000007-0000000044444-ABCDEASDADADAD' # Required but Choice 2
 ``` 
+
+
+<br/>
+<br/>
+
+## Author
+**KanghyunJeon**
+

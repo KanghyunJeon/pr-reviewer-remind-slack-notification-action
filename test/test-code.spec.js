@@ -11,6 +11,10 @@ const {
 } = require('../utils/functions');
 
 
+test('stringToMap 정상노출 확인', () => {
+  expect(stringToMap("KanghyunJeon:UUABCDEFG,member:UuHIJKLMN")).toEqual({"KanghyunJeon": "UUABCDEFG", "member": "UuHIJKLMN"});
+});
+
 test('영문이 나와야 함', () => {
   stringLocaleUtil.setLangCode("en")
   expect(stringLocaleUtil.getInvalidFormatMsg()).toEqual(`The github-developer-id-mapping is not in correct format: "githubname1:slackid1,githubname2:slackid2,..."`);
