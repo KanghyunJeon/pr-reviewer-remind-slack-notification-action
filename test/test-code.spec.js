@@ -12,7 +12,7 @@ const {
 
 
 test('stringToMap 정상노출 확인', () => {
-  expect(stringToMap("KanghyunJeon:UUABCDEFG,member:UuHIJKLMN")).toEqual({"KanghyunJeon": "UUABCDEFG", "member": "UuHIJKLMN"});
+  expect(stringToMap("KanghyunJeon-ABC:UUABCDEFG,member:UuHIJKLMN")).toEqual({"KanghyunJeon-ABC": "UUABCDEFG", "member": "UuHIJKLMN"});
 });
 
 test('영문이 나와야 함', () => {

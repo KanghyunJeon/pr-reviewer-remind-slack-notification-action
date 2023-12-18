@@ -108,20 +108,20 @@ function createPrReviewerArray(pullRequestsReviewersArray) {
 function checkGithubProviderFormat(githubDeveloperIdMappingString) {
     const az09 = '[A-z0-9_\\-@\\.]+';
     const pattern = new RegExp(`^${az09}:${az09}(,\\s*${az09}:${az09})*$`, 'm');
-    return pattern.test(str);
+    return pattern.test(githubDeveloperIdMappingString);
 }
 
 /**
  * Convert a string like "githubname1:slackid1,githubname2:slackid2" to an Object { githubname1: "slackid1", githubname2: "slackid2"}
- * @param {String} str String to convert to Object
+ * @param {String} githubDeveloperIdMappingString String to convert to Object
  * @return {Object} Simplified Map Object
  */
-function stringToMap(str) {
+function stringToMap(githubDeveloperIdMappingString) {
     const map = {};
-    if (!str) {
+    if (!githubDeveloperIdMappingString) {
         return map;
     }
-    const users = str.replace(/[\s\r\n]+/g, '').split(',');
+    const users = githubDeveloperIdMappingString.replace(/[\s\r\n]+/g, '').split(',');
     users.forEach((user) => {
         const [github, provider] = user.split(':');
         map[github] = provider;

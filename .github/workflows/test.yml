@@ -1,0 +1,31 @@
+######TEST
+######TEST
+######TEST
+######TEST
+######TEST
+######TEST
+name: 'Pull request reviewer reminder'
+on:
+  push:
+    # branches to consider in the event; optional, defaults to all
+    branches:
+      - main
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  pull-request-reviewer-reminder:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: KanghyunJeon/pr-reviewer-remind-slack-notification-action@v0.0.8
+        env:
+          GITHUB_TOKEN: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
+        with:
+          github-developer-id-mapping: "KanghyunJeon:UUABCDEFG,member:UuHIJKLMN" # Required, need to set github repository vaiables ex) KanghyunJeon:UUABCDEFG,member:UuHIJKLMN'
+          slack-channel-id: 'C04908VABCD' # Required
+          slack-message-lang: 'ko' # Optional, ex) ko
+          slack-webhook-url: 'https://hooks.slack.com/services/T01SBGSHN07/B068GNYP3N2/dsadsadsadsadsadsadsa' # Required but Choice 1
+          slack-webhook-username: 'PR Bot' # Optional for Choice 1
+          slack-bot-token: 'xoxb-1895570600007-4142423706998-dsadsadsadsadsadsadsa' # Required but Choice 2
