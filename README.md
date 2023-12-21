@@ -77,7 +77,11 @@ jobs:
 
         slack-bot-token: 'xoxb-1010101000007-0000000044444-ABCDEASDADADAD' # Required but Choice 2
 ``` 
+<br/>
 
+## Result
+**CI/CD bot sent a remind notification on the Slack channel**
+![Screenshot](sample.png)
 
 <br/>
 <br/>
