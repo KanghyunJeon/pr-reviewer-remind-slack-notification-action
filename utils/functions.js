@@ -66,8 +66,11 @@ async function sendNotificationWithBot(botToken, messageData) {
  * @param {Array} pullRequests Pull Requests to filter
  * @return {Array} Pull Requests to review
  */
-function getPRArrayOfReviewers(pullRequests) {
-    return pullRequests.filter((pr) => !pr.draft && (pr.requested_reviewers.length || pr.requested_teams.length));
+function getPRArrayOfReviewers(pullRequests, excludeDraft = false) {
+    return pullRequests.filter((pr) => 
+        (!excludeDraft || !pr.draft) && 
+        (pr.requested_reviewers.length || pr.requested_teams.length)
+    );
 }
   
   
