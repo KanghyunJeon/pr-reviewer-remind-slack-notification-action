@@ -38841,6 +38841,7 @@ async function main() {
         const githubDeveloperIdMappingString = core.getInput('github-developer-id-mapping'); //Required
         const slackChannelId = core.getInput('slack-channel-id'); //Required
         const slackMessageLang = core.getInput('slack-message-lang'); //Optional Language
+        const excludeDraftPrs = core.getInput('exclude-draft-prs') === 'true'; //Optional: Exclude draft PRs
 
         const slackWebhookUrl = core.getInput('slack-webhook-url'); //Select 1
         const slackWebhookUsename = core.getInput('slack-webhook-username'); //Optional for Select 1
@@ -38848,7 +38849,7 @@ async function main() {
         const slackBotToken = core.getInput('slack-bot-token'); //Select 2
       
         const pullRequests = await getPullRequests(PULLS_ENDPOINT, AUTH_HEADER);
-        const pullRequestsReviewersArray = getPRArrayOfReviewers(pullRequests.data);
+        const pullRequestsReviewersArray = getPRArrayOfReviewers(pullRequests.data, excludeDraftPrs);
       
       
         if (pullRequestsReviewersArray) {
