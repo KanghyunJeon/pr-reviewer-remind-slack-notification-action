@@ -34,9 +34,11 @@ async function main() {
         const slackWebhookUsename = core.getInput('slack-webhook-username'); //Optional for Select 1
 
         const slackBotToken = core.getInput('slack-bot-token'); //Select 2
-      
+
+        const excludeDraftPrs = core.getInput('exclude-draft-prs') === 'true'; //Optional: Exclude draft PRs
+
         const pullRequests = await getPullRequests(PULLS_ENDPOINT, AUTH_HEADER);
-        const pullRequestsReviewersArray = getPRArrayOfReviewers(pullRequests.data);
+        const pullRequestsReviewersArray = getPRArrayOfReviewers(pullRequests.data, excludeDraftPrs);
       
       
         if (pullRequestsReviewersArray) {
