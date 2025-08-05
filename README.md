@@ -44,6 +44,13 @@ Choice 2 : Slack bot token <br/>
 **Default: ''** <br/>
 Ex) 'xoxb-1010101000007-0000000044444-ABCDEASDADADAD'
 
+**`exclude-draft-prs`** <br/>
+Optional: Exclude draft PRs <br/>
+  -> you can exclude draft PRs. If you don't want the notifications. <br/>
+**Required: false** <br/>
+**Default: 'false'** <br/>
+Ex) 'false'
+
 <br/>
 <br/>
 <br/>
@@ -76,6 +83,7 @@ jobs:
         slack-webhook-username: 'PR Bot' # Optional for Choice 1
 
         slack-bot-token: 'xoxb-1010101000007-0000000044444-ABCDEASDADADAD' # Required but Choice 2
+        exclude-draft-prs: 'true'
 ``` 
 <br/>
 
