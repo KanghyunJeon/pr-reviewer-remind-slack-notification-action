@@ -83,7 +83,8 @@ jobs:
         slack-webhook-username: 'PR Bot' # Optional for Choice 1
 
         slack-bot-token: 'xoxb-1010101000007-0000000044444-ABCDEASDADADAD' # Required but Choice 2
-        exclude-draft-prs: 'true'
+
+        exclude-draft-prs: 'true' # Choice for draft enable/disable
 ``` 
 <br/>
 
